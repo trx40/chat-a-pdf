@@ -26,15 +26,20 @@ Welcome to the "chat-a-PDF" project, a comprehensive chat application with PDF i
 # Installation
 Follow the steps below to install and setup the project:
 
+
 1. Clone the repository
 
 Open your terminal and run the following command:
 
-`git clone https://github.com/trx40/chat-a-pdf.git`
+```
+git clone https://github.com/trx40/chat-a-pdf.git
+```
 
 Navigate to the project directory
 
-`cd chatpdf-yt`
+```
+cd chatpdf-yt
+```
 
 2. Install Node.js
 
@@ -44,7 +49,9 @@ The project requires Node.js version 13.4.19 or later. You can download it from 
 
 Run the following command to install all the required dependencies:
 
-`npm install`
+```
+npm install
+```
 
 This will install all the dependencies listed in the package.json file, including Next.js, React, React DOM, Axios, Stripe, Tailwind CSS, and other specific dependencies such as "@aws-sdk/client-s3" and "@clerk/nextjs".
 
@@ -56,5 +63,8 @@ Create a .env file in the root directory of your project and add the required en
 
 Now, you can run the project using the following command:
 
-`npm run dev`
+```
+npm run dev
+```
+
 Open http://localhost:3000 with your browser to see the result.
