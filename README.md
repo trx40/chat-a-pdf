@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Overview
+Welcome to the "chat-a-PDF" project, a comprehensive chat application with PDF integration. This project is designed to provide a seamless chat experience where users can upload PDF files, create chats around them, and interact with an AI assistant. The AI assistant uses the OpenAI API to generate responses based on the chat context. The application also includes a subscription feature, where users can subscribe to access premium features. The subscription process is handled using Stripe for payments and webhooks for event processing.
 
-## Getting Started
+# Technologies and Frameworks
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Clerk
+- Drizzle ORM
+- PostgreSQL
+- AWS SDK
+- OpenAI API
+- Stripe
+- Axios
+- Pinecone
+- Drizzle-kit
+- OpenAI Edge
+- Neon Database Serverless
+- Drizzle-orm/neon-http
+- @tanstack/react-query
+- @clerk/nextjs
+- clsx
+- tailwind-merge
+  
+# Installation
+Follow the steps below to install and setup the project:
 
-First, run the development server:
+1. Clone the repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open your terminal and run the following command:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`git clone https://github.com/trx40/chat-a-pdf.git`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Navigate to the project directory
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+`cd chatpdf-yt`
 
-## Learn More
+2. Install Node.js
 
-To learn more about Next.js, take a look at the following resources:
+The project requires Node.js version 13.4.19 or later. You can download it from here.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Install the required dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Run the following command to install all the required dependencies:
 
-## Deploy on Vercel
+`npm install`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This will install all the dependencies listed in the package.json file, including Next.js, React, React DOM, Axios, Stripe, Tailwind CSS, and other specific dependencies such as "@aws-sdk/client-s3" and "@clerk/nextjs".
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. Setup environment variables
+
+Create a .env file in the root directory of your project and add the required environment variables.
+
+5. Run the project
+
+Now, you can run the project using the following command:
+
+`npm run dev`
+Open http://localhost:3000 with your browser to see the result.
