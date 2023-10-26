@@ -45,13 +45,15 @@ function FileUpload() {
         const data = await uploadtoS3(file);
 
         if (!data?.file_key || !data.file_name) {
+          console.log()
           toast.error("Something went wrong!");
           return;
         }
 
         mutate(data, {
           onSuccess: (data) => {
-            toast.success(data.message)
+            console.log(data)
+            // toast.success(data.message)
           },
           onError: (error) => {
             toast.error("Error creating chat");
