@@ -7,10 +7,12 @@ import { Inbox, Loader2 } from "lucide-react";
 import React from "react";
 import { useDropzone } from "react-dropzone";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 function FileUpload() {
+  const router = useRouter();
 
-  const [uploading, setUploading] = React.useState(false)
+  const [uploading, setUploading] = React.useState(false);
 
   const { mutate, isPending } = useMutation({
     mutationFn: async ({
@@ -41,22 +43,23 @@ function FileUpload() {
         return;
       }
       try {
-        setUploading(true)
+        setUploading(true);
         const data = await uploadtoS3(file);
 
         if (!data?.file_key || !data.file_name) {
-          console.log()
+          console.log();
           toast.error("Something went wrong!");
           return;
         }
 
         mutate(data, {
-          onSuccess: (data) => {
-            console.log(data)
-            // toast.success(data.message)
+          onSuccess: ({ chat_id }) => {
+            toast.success("Chat created");
+            router.push(`/chat/${chat_id}`);
           },
           onError: (error) => {
             toast.error("Error creating chat");
+            console.error(error);
           },
         });
       } catch (error) {
@@ -76,16 +79,16 @@ function FileUpload() {
         })}
       >
         <input {...getInputProps()} />
-        {(uploading || isPending) ? (
-            <>
+        {uploading || isPending ? (
+          <>
             {/* loading state */}
             <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />
             <p className="mt-2 text-sm text-slate-400">
               Spilling Tea to GPT...
             </p>
-            </>
-        ): (
-           <>
+          </>
+        ) : (
+          <>
             <Inbox className="w-10 h-10 text-blue-500" />
             <p className="mt-2 text-sm text-slate-400">Drop PDF here</p>
           </>
@@ -93,5 +96,5 @@ function FileUpload() {
       </div>
     </div>
   );
-};
+}
 export default FileUpload;
